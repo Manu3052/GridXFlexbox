@@ -1,0 +1,101 @@
+
+body, nav, ul, li, a, p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial;
+    font: 40px;
+}
+
+
+nav  a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-weight: 800;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+}
+
+/* css flex-box*/
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex > div {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+/* css grid */
+
+.grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    grid-gap: 20px;
+    max-width: 780px;
+}
+
+.grid1 > div:nth-child(n + 4) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.grid1 > div.anuncio {
+    display: block;
+    grid-column: 1;
+    grid-row: 2/5;
+    border-top: 10px solid ;
+}
+
+@media (max-width: 600px) {
+    .grid1{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid1 > div:nth-child(n + 4) {
+       display: block;
+    }
+
+    .grid1 > div.anuncio {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+}
+
